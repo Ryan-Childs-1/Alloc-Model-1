@@ -1,10 +1,10 @@
-# Allocation AI — Keras Neural Network Streamlit App
+# Allocation AI — Keras Neural Network Final Alloc. Filler
 
-This is a flat-file Streamlit app designed for the Daily Allocation CSV/XLSX format submitted by Ryan.
+Flat-file Streamlit app for Daily Allocation CSV/XLSX files formatted like the submitted Sportsman's Warehouse allocation exports.
 
 ## Files
 
-Place all files in the same GitHub repo folder:
+Keep all files in the same GitHub folder:
 
 ```text
 app.py
@@ -14,61 +14,37 @@ allocation_ai_keras_nn_model.keras
 allocation_ai_keras_preprocessor.joblib
 training_metrics.json
 keras_nn_validation_sample.csv
+train_keras_nn.py
 ```
 
-There are no nested folders required.
-
-## What it does
-
-The app loads the included Keras neural network and fills the `Final Alloc.` column for a newly uploaded Daily Allocation file.
-
-It handles the submitted CSV structure, including:
-
-- first-row notes / blank row before the real headers
-- real headers on row 2
-- duplicate columns such as `MIL` / `MIL.1` and `FLM` / `FLM.1`
-- trailing unnamed columns
-- `Z - No Alloc.` rows
-- blank `Final Alloc.` values representing zero/no allocation
-
-## Model behavior
-
-The model predicts a raw neural-network allocation value, then applies internal business-safety rules:
-
-- FLM rounding
-- no-allocation flag protection
-- blank/non-signal row protection
-- D60 + one FLM final-supply cap
-- DC available cap
-- audit columns for review
-
-## Run locally
+## How to run locally
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy on Streamlit Cloud
+## Streamlit Cloud
 
 1. Create a GitHub repo.
-2. Upload all files from this folder to the root of the repo.
-3. Go to Streamlit Cloud.
-4. Select the repo.
-5. Set the app file to `app.py`.
-6. Deploy.
+2. Upload all files in this folder directly into the repo root.
+3. In Streamlit Cloud, set the main file path to `app.py`.
+4. Deploy.
 
-## Continue training
+## Workflow
 
-Use the `Continue Training` tab to upload corrected allocation files. The app has no model-setting UI; it uses fixed internal training parameters. After training, download both:
+1. Upload a Daily Allocation CSV/XLSX.
+2. Click **Run Keras Neural Network and Fill Final Alloc.**
+3. Download the edited XLSX or CSV.
+
+## Model notes
+
+The included Keras model was trained on all six submitted Daily Allocation files. The app keeps all decision-signal rows: rows marked `Allocate`, rows marked `Review`, rows with positive `Alloc. Rec.`, and rows with positive historical `Final Alloc.`. Blank/no-signal rows are protected with business rules so the model does not fill every row.
+
+The program fixes the previous export error:
 
 ```text
-allocation_ai_keras_nn_model.keras
-allocation_ai_keras_preprocessor.joblib
+ValueError: cannot convert float NaN to integer
 ```
 
-Replace the old versions in GitHub with the new versions.
-
-## Training summary for included model
-
-See `training_metrics.json` for metrics generated during the build.
+The XLSX writer now uses NaN-safe column width logic for all-blank columns.

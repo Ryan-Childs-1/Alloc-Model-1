@@ -1,11 +1,122 @@
 {
-  "mae_raw": 0.9389623999595642,
-  "rmse_raw": 3.0516653110981014,
-  "training_rows": 24495,
-  "validation_rows": 6124,
-  "all_source_rows_scanned": 539558,
-  "positive_training_rows": 5789,
-  "positive_validation_rows": 1447,
-  "input_dim": 176,
-  "epochs_ran": 15
+  "created_at": "2026-05-23T00:37:52.744845Z",
+  "model_type": "Keras 3 Torch-backend residual neural network, signal-row allocation regressor",
+  "source_files": [
+    {
+      "file": "Copy of Copy of Daily Allocation - 127, 128, 706, 134 - 5.18.2026.csv",
+      "rows": 213897,
+      "signal_rows_used": 799,
+      "positive_rows": 436,
+      "all_signal_rows": 799
+    },
+    {
+      "file": "Copy of Copy of Daily Allocation - 130, 135, 114, 115, 153 - 5.19.2026.csv",
+      "rows": 213897,
+      "signal_rows_used": 2183,
+      "positive_rows": 1008,
+      "all_signal_rows": 2183
+    },
+    {
+      "file": "Copy of Copy of Daily Allocation - 132, 150 - 5.18.2026.csv",
+      "rows": 213897,
+      "signal_rows_used": 2678,
+      "positive_rows": 2072,
+      "all_signal_rows": 2678
+    },
+    {
+      "file": "Copy of Daily Allocation - 133, 155, 131, 704, 141, 152, 156, 708, 715 - 5.20.2026.csv",
+      "rows": 213897,
+      "signal_rows_used": 4342,
+      "positive_rows": 2024,
+      "all_signal_rows": 4342
+    },
+    {
+      "file": "Daily Allocation - 127, 128, 706, 134 - 5.22.2026.csv",
+      "rows": 213897,
+      "signal_rows_used": 949,
+      "positive_rows": 538,
+      "all_signal_rows": 949
+    },
+    {
+      "file": "Daily Allocation - 132, 143, 150 - 5.21.2026.csv",
+      "rows": 213897,
+      "signal_rows_used": 1668,
+      "positive_rows": 1158,
+      "all_signal_rows": 1668
+    }
+  ],
+  "full_source_rows_seen": 1283382,
+  "signal_training_rows": 12619,
+  "positive_rows": 7236,
+  "feature_count": 187,
+  "numeric_feature_count": 59,
+  "hash_dim": 128,
+  "epochs_trained": 40,
+  "validation_rows": 2524,
+  "validation_positive_rows": 1447,
+  "validation_mae_raw_units": 9.52753734588623,
+  "validation_rmse_raw_units": 309.9545203533899,
+  "validation_positive_mae_raw_units": 15.866475105285645,
+  "history_tail": {
+    "loss": [
+      0.2954109013080597,
+      0.29069066047668457,
+      0.2860991358757019,
+      0.28395381569862366,
+      0.27757301926612854,
+      0.2717413604259491,
+      0.2715378999710083,
+      0.26837489008903503,
+      0.2654862403869629,
+      0.2610045075416565
+    ],
+    "mae": [
+      0.3921383321285248,
+      0.3879658579826355,
+      0.38439592719078064,
+      0.38083508610725403,
+      0.3789409399032593,
+      0.3748522102832794,
+      0.3711569905281067,
+      0.37027260661125183,
+      0.36963722109794617,
+      0.36501407623291016
+    ],
+    "val_loss": [
+      0.9305394887924194,
+      0.8977811932563782,
+      0.8561232089996338,
+      0.8121887445449829,
+      0.7798803448677063,
+      0.7642397880554199,
+      0.7390492558479309,
+      0.684964656829834,
+      0.6702185273170471,
+      0.6627035140991211
+    ],
+    "val_mae": [
+      0.596126914024353,
+      0.5887701511383057,
+      0.5793648362159729,
+      0.5689237117767334,
+      0.5604504346847534,
+      0.5565721988677979,
+      0.5496044754981995,
+      0.5351893901824951,
+      0.5321066379547119,
+      0.5305797457695007
+    ],
+    "learning_rate": [
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453,
+      0.0008999999845400453
+    ]
+  }
 }
