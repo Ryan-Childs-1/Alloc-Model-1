@@ -1,0 +1,11 @@
+{
+  "mae_raw": 0.9389623999595642,
+  "rmse_raw": 3.0516653110981014,
+  "training_rows": 24495,
+  "validation_rows": 6124,
+  "all_source_rows_scanned": 539558,
+  "positive_training_rows": 5789,
+  "positive_validation_rows": 1447,
+  "input_dim": 176,
+  "epochs_ran": 15
+}
